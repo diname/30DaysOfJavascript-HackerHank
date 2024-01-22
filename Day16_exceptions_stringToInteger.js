@@ -22,4 +22,9 @@ function readLine() {
 
 function main() {
   const S = readLine()
+  try {
+    console.log(Number.parseInt(S, 10) ? Number.parseInt(S, 10) : 'Bad String')
+  } catch (error) {
+    console.log('Bad String')
+  }
 }
