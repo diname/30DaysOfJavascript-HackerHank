@@ -50,7 +50,7 @@ function main() {
     return numberOfSwaps
   }
   var swapNum = bubbleSort()
-  console.log('Array is sorted in ' + swapNum + ' swaps.')
-  console.log('First Element: ' + a[0])
-  console.log('Last Element: ' + a[a.length - 1])
+  console.log(`Array is sorted in ${swapNum} swaps.`)
+  console.log(`First Element: ${a[0]}`)
+  console.log(`Last Element: ${a[a.length - 1]}`)
 }
