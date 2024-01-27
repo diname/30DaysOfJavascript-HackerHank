@@ -21,4 +21,13 @@ function readLine(): string {
 
 function main() {
   // Enter your code here
+  const numberQ = +readLine()
+  for (let i = 0; i < numberQ; i++) {
+    console.log(readLine())
+  }
+  const wordQ = +readLine()
+
+  for (let i = 0; i < wordQ; i++) {
+    console.log(readLine())
+  }
 }
