@@ -31,14 +31,27 @@ function BinarySearchTree() {
     return this.root
   }
 
-  // Start of function getHeight
-  this.getHeight = function (root) {
+  // Start of function levelOrder
+  this.levelOrder = function (root) {
     // Add your code here
-    if (!root) return -1
-    const left = this.getHeight(root.left)
-    const right = this.getHeight(root.right)
-    return Math.max(left, right) + 1
-  } // End of function getHeight
+    const result = []
+    const queue = [root]
+
+    while (queue.length) {
+      const node = queue.shift()
+
+      result.push(node.data)
+
+      if (node.left) {
+        queue.push(node.left)
+      }
+      if (node.right) {
+        queue.push(node.right)
+      }
+    }
+    // To print values separated by spaces use process.stdout.write(someValue + ' ')
+    console.log(result.join(' '))
+  } // End of function levelOrder
 } // End of function BinarySearchTree
 
 process.stdin.resume()
@@ -60,5 +73,5 @@ process.stdin.on('end', function () {
     root = tree.insert(root, values[i])
   }
 
-  console.log(tree.getHeight(root))
+  tree.levelOrder(root)
 })
