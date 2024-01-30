@@ -23,7 +23,16 @@ function Node(data) {
 function Solution() {
   this.removeDuplicates = function (head) {
     //Write your code here
-    console.log(head)
+    let current = head
+
+    while (current.next) {
+      if (current.next) {
+        if (current.data === current.next.data) current.next = current.next.next
+        else current = current.next
+      }
+    }
+
+    return head
   }
 
   this.insert = function (head, data) {
