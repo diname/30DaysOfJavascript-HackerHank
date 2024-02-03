@@ -22,6 +22,9 @@ function readLine() {
 
 function main() {
   const N = parseInt(readLine().trim(), 10)
+  const DESIRED_DOMAIN = '@gmail.com'
+
+  let sameNames = []
 
   for (let NItr = 0; NItr < N; NItr++) {
     const firstMultipleInput = readLine().replace(/\s+$/g, '').split(' ')
@@ -29,5 +32,12 @@ function main() {
     const firstName = firstMultipleInput[0]
 
     const emailID = firstMultipleInput[1]
+
+    if (emailID.endsWith(DESIRED_DOMAIN)) {
+      sameNames.push(firstName)
+    }
   }
+
+  const SORTED_NAMES = sameNames.sort().join('\n')
+  console.log(SORTED_NAMES)
 }
