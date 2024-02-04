@@ -33,6 +33,17 @@ function readLine() {
 
 function bitwiseAnd(N, K) {
   // Write your code here
+  let max = 0
+  for (let i = 1; i <= N; i++) {
+    for (let j = 1; j < i; j++) {
+      let bit = i & j
+
+      if (max < bit && bit < K) {
+        max = bit
+      }
+    }
+  }
+  return max
 }
 
 function main() {
